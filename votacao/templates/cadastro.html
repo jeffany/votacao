@@ -1,0 +1,16 @@
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="text-align: center; width: 350px;" class="mx-auto">
+<h2>Cadastro do Eleitor</h2>
+<form method="POST">
+	Nome: <input class="form-control" name="nome" type="text" {% if error %}style="border-color: red;"{% endif %}><br/>
+	CPF: <input class="form-control" name="cpf" type="text" {% if error %}style="border-color: red;"{% endif %}><br/>
+	Senha: <input class="form-control" name="password" type="password"><br/>
+	<button class="btn btn-success" type="submit">Cadastrar-se</button>
+</form>
+</div>
+
+ {% endblock %}
