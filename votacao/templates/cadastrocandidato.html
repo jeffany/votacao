@@ -1,0 +1,33 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 style="color: darkgreen; text-align:center; margin-bottom: 30px;">Criar Eleição</h1>
+	<form style="text-align:center;" method="POST">
+      <h4 style="text-align: center; color: green">Cadastro de Candidatos</h4>
+      <h4 style="text-align: center; color: green">Candidato 1</h4>
+      <div>
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" required> *
+      </div>
+      <div>
+        <label for="descricao">Descrição:</label>
+        <textarea  name="descricao"></textarea>
+      </div>
+      <h4 style="text-align: center; color: green">Candidato 2</h4>
+      <div>
+        <label for="nome1">Nome:</label>
+        <input type="text" name="nome1" required> *
+      </div>
+      <div>
+        <label for="descricao1">Descrição:</label>
+        <textarea  name="descricao1"></textarea>
+      </div>
+      <button type="submit" class="btn btn-outline-success">Cadastrar candidato</button> 
+    </form>
+    <div>
+		<img src="http://i.imgur.com/JIFPTSb.png" style="float: right;" />
+	</div>
+    
+{% endblock %}

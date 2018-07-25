@@ -1,16 +1,46 @@
-<main>
-  <h1 style="color: darkgreen">Criar Eleição</h1>
-  <form action="sucesso.html" method="post">
-    <fieldset>
-      <legend>Cadastro de Candidatos</legend>
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <h1 style="color: darkgreen; text-align:center; margin-bottom: 30px;">Criar Eleição</h1>
+  <form style="text-align:center;" method="POST">
+      <h4 style="text-align: center; color: green">Criar eleição</h4>
       <div>
-        <label for="nome">Nome</label>
-        <input type="text" id="nome" name="nome" required> *
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" required> *
       </div>
       <div>
-        <label for="mensagem">Descrição</label>
-        <textarea id="descrição" name="descrição"></textarea>
+        <label for="descricao">Descrição:</label>
+        <textarea name="descricao"></textarea>
       </div>
-    </fieldset>
+      <div class="form-group" style= "text-align: center; width: 300px;">
+      <label for="candidato_um" style="margin-left: 650px;">Candidato 01:</label>
+      <div style="text-align: center;">
+      <select class="form-control" id="candidato"  name="candidato" style="margin-left: 550px;">
+        {% for x in candidatos %}
+        <option value="{{x[1]}}">{{x[0]}}</option>
+        {% endfor %}
+      </select>
+      </div>
+      </div>
+      <div class="form-group" style= "text-align: center; width: 300px;">
+      <label for="candidato_dois" style="margin-left: 650px;">Candidato 02:</label>
+      <div style="">
+      <select class="form-control" name="candidatos" id="candidatos" style="margin-left: 550px;">
+        {% for x in candidatos %}
+        <option value="{{x[1]}}" >{{x[0]}}</option>
+        {% endfor %}
+      </select>
+      </div>
+      </div>
+      <div>
+        <label for="periodo">Periodo ativo:</label>
+        <input type="date" name="periodo" required> * 
+      </div>
+      </div>
+      <br>
+      <button type="submit" class="btn btn-outline-success">Criar Eleição</button>
   </form>
-</main>
+
+
+{% endblock %}
